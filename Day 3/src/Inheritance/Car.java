@@ -1,13 +1,11 @@
 package Inheritance;
 
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
+
 public class Car extends Vehicle {
-    int gear;
+    int gear; //1-6
 
-    public int getGear() {
-        return gear;
-    }
-
-    public void setGear(int gear) {
-        this.gear = gear;
-    }
 }

@@ -1,26 +1,17 @@
 package Inheritance;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @NoArgsConstructor
+@Setter
+@Getter
 
 public class Vehicle {
-    int speed;
+    int speed = 100;
     int distance;
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getDistance() {
-        return distance;
-    }
-
-    public void setDistance(int distance) {
-        this.distance = distance;
-    }
+    String model;
 
     public void increaseSpeed (int amount){
         speed += amount;
