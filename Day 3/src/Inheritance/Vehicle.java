@@ -1,6 +1,34 @@
 package Inheritance;
 
 public class Vehicle {
+    int speed;
+    int distance;
+
+    public Vehicle() {
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public void increaseSpeed (int amount){
+        speed += amount;
+    }
+
+    public void decreaseSpeed (int amount){
+        speed -= amount;
+    }
 }
 //5) Inheritance.Vehicle
 // Create a base class of a Inheritance.Vehicle,
