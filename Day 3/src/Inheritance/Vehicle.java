@@ -1,11 +1,11 @@
 package Inheritance;
 
+import lombok.NoArgsConstructor;
+@NoArgsConstructor
+
 public class Vehicle {
     int speed;
     int distance;
-
-    public Vehicle() {
-    }
 
     public void setSpeed(int speed) {
         this.speed = speed;
