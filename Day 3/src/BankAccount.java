@@ -1,11 +1,54 @@
 public class BankAccount {
-    public static void main(String[] args) {
-        int balance;
+    private int balance;
+
+    public BankAccount(){
+    }
+    public BankAccount(int balance){
+        this.balance = balance;
+    }
+
+    public void deposit(int amount){
+        if(amount<=5000){
+        balance = balance+amount;
+        }
+        else{
+            System.out.println("Transaction canceled. Max deposit - 5000 | Your deposit: " + amount);
+        }
+    }
+    public void withdraw(int amount){
+        if(balance>=amount){
+        balance = balance-amount;
+        }
+        else {
+            System.out.println("There is not enough funds.");
+        }
+    }
+    public int printBalance(){
+        return balance;
+    }
+
+    public static void transferFrom(BankAccount bankName1, BankAccount bankName2, int amount){
+        if(amount<= bankName1.balance) {
+            bankName2.balance += amount;
+            bankName1.balance -= amount;
+        }
+        else{
+            System.out.println("Transfer canceled. You are trying to transfer " + amount + " units, but only " + bankName1.printBalance() + " are available.");
+        }
+    }
+
+    public static void main (String [] args){
+        BankAccount bank1 = new BankAccount(7000);
+        BankAccount bank2 = new BankAccount(7000);
+        bank1.withdraw(8000);
+        bank1.deposit(9000);
+        transferFrom(bank1, bank2, 10000);
+
     }
 }
 
 /*
-3) create a class "BankAccount" with property "balance" (should be decimal number)
+ 3) create a class "BankAccount" with property "balance" (should be decimal number)
     * create empty default constructor for it
     * create a constructor with parameter for setting balance.
     * create a method "deposit" with one parameter "amount" (decimal number)
