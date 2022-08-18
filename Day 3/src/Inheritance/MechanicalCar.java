@@ -6,5 +6,6 @@ public class MechanicalCar extends Car {
         System.out.println(car1.getSpeed());
         car1.increaseSpeed(50);
         car1.setModel("Volvo");
+        car1.setGear(5);
     }
 }
