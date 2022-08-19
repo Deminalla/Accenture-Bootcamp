@@ -21,7 +21,14 @@ public class hashSet {
             System.out.println(it.next()); // will print in random order because it's a hashset
         }
          */
+        // Compare two sets and retain elements which are same on both sets
+        HashSet<String> dessertList2 = new HashSet<String>();
+        dessertList2.add("Pie");
+        dessertList2.add("Chocolate");
+        dessertList2.add("Cupcake");
+        dessertList2.add("Cookie");
 
-
+        dessertList2.retainAll(dessertList);
+        System.out.println("HashSet content: " + dessertList2); // [Cupcake, Pie]
     }
 }
