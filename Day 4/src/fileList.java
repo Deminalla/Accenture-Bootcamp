@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class fileList {
     public static void main (String[] args){
@@ -49,6 +50,11 @@ public class fileList {
             System.out.println(files.getAbsolutePath() + " is a directory");
         }
 
+        // get last modified time of a file
+        File day4 = new File("C:\\Users\\deniz\\Desktop\\Accenture\\OOP Syntax\\Day 4");
+        Date date = new Date(day4.lastModified());
+        System.out.println("The file was last modified on: "+date);
+
         //compare 2 files lexicographically
         String fileName1 = fileNames.get(2);
         String fileName2 = fileNames.get(5);
@@ -59,5 +65,13 @@ public class fileList {
         if s1 == s2, it returns 0
         for example hello compared to hemlo is -1 because "l" is 1 times lower than "m"
          */
+
+
+        File file1 = new File("C:\\Users\\deniz\\Desktop\\Accenture\\10_IO.pdf"); // .length() doesn't work on directories
+        System.out.println("Size of file:");
+        System.out.println("* " + file1.length() + " bytes"); // bytes are the default
+        System.out.println("* " + file1.length()/1024 + " kilobytes");
+        System.out.println("* " + file1.length()/(1024*1024) + " megabytes");
+
     }
 }
