@@ -9,7 +9,7 @@ public class fileList {
         String[] fList = files.list();
 
         ArrayList<String> fileNames = new ArrayList<>();
-        for(String name: fList){
+        for(String name: fList){ // as long as it's not null
             System.out.println(name);
             fileNames.add(name);
         }
@@ -65,7 +65,6 @@ public class fileList {
         if s1 == s2, it returns 0
         for example hello compared to hemlo is -1 because "l" is 1 times lower than "m"
          */
-
 
         File file1 = new File("C:\\Users\\deniz\\Desktop\\Accenture\\10_IO.pdf"); // .length() doesn't work on directories
         System.out.println("Size of file:");
