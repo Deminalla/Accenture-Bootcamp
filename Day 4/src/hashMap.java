@@ -2,17 +2,17 @@ import java.util.*;
 
 /*HashMap Stores elements in form of key-value pair
 Each element has its corresponding key which is required for its retrieval during iteration
-Won't actually sort and make it random order, unless the keys are integers
+Insertion order won't stay and will make it random, unless the keys are integers because then it will sort properly
  */
 
 public class hashMap {
     public static void main(String []args) {
-        HashMap<Integer,String> hash_map = new HashMap<>();
-        hash_map.put(1, "Saturn");
-        hash_map.put(2, "Mercury");
-        hash_map.put(3, "Neptune");
-        hash_map.put(4, "Venus");
-        hash_map.put(5, "Jupiter");
+        HashMap<String ,String> hash_map = new HashMap<>();
+        hash_map.put("s", "Saturn");
+        hash_map.put("m", "Mercury");
+        hash_map.put("n", "Neptune");
+        hash_map.put("v", "Venus");
+        hash_map.put("j", "Jupiter");
 
         for(Map.Entry pair: hash_map.entrySet()){
             System.out.println(pair.getKey() + " " + pair.getValue());
@@ -21,7 +21,7 @@ public class hashMap {
         for (String value : hash_map.values()) { // to only get values
            // ...
         }
-        for (Integer key : hash_map.keySet()) { // to only get keys
+        for (String key : hash_map.keySet()) { // to only get keys
             // ...
         }
          */
@@ -44,14 +44,14 @@ public class hashMap {
         }
 
         // create set view for the map
-        System.out.println("Set values: " + hash_map); // {1=Saturn, 2=Mercury,......}
+        System.out.println("Set values: " + hash_map); // {s=Saturn, v=Venus, j=Jupiter, m=Mercury, n=Neptune}
         /*
         Set mapSet = hash_map.entrySet();
-        System.out.println("Set values: " + mapSet); // [1=Saturn, 2=Mercury,......]
+        System.out.println("Set values: " + mapSet); // [s=Saturn, v=Venus,......]
          */
 
         // get keyset value and value from map
         Set keySet = hash_map.keySet();
-        System.out.println("Key set values are: " + keySet); // [1, 2, 3, 4, 5]
+        System.out.println("Key set values are: " + keySet); // [s, v, j, m, n]
     }
 }
