@@ -1,8 +1,12 @@
 import java.util.*;
 
+/*
+Hashset does not allow duplicates, so it's used when you want a collection that contains unique elements
+HashSet doesn't maintain the insertion order. The elements are inserted on the basis of their hashcode (does this by hashing) (looks random to me)
+ */
+
 public class hashSet {
     public static void main (String[] args){
-        // HashSet is commonly used if we have to access elements randomly. It is because elements in a hash table are accessed using hash codes.
         HashSet<String> dessertList = new HashSet<>();
         dessertList.add("Pie");
         dessertList.add("Cake");
@@ -29,6 +33,6 @@ public class hashSet {
         dessertList2.add("Cookie");
 
         dessertList2.retainAll(dessertList);
-        System.out.println("HashSet content: " + dessertList2); // [Cupcake, Pie]
+        System.out.println("HashSet2 content: " + dessertList2); // [Cupcake, Pie]
     }
 }
