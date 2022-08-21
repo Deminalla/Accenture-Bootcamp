@@ -1,5 +1,10 @@
 import java.util.*;
 
+/*
+Treeset does not allow duplicates, so it's used when you want a collection that contains unique elements
+Treeset doesn't maintain the insertion order
+ */
+
 public class treeSet {
     public static void main(String[] args) {
         TreeSet<String> countryList = new TreeSet<>(); // self-balancing binary search tree
@@ -13,14 +18,14 @@ public class treeSet {
             System.out.println(element); // Prints out from the smallest element (starts from the very left of the tree)
         }
 
-        // Find countries that are less than K (it's more comfortable to do this with numbers but oh well)
+        System.out.println("Countries that are less than \"K\":"); // it's more comfortable to do this with numbers but oh well
         TreeSet<String> searchList = new TreeSet<>();
         searchList = (TreeSet)countryList.headSet("K");
 
         Iterator it = searchList.iterator();
-        /*while (it.hasNext()){
+        while (it.hasNext()){
             System.out.println(it.next() + " ");
-        }*/
+        }
 
         System.out.println("Greater or equal to K: " + countryList.ceiling("K")); // will show only 1 element (because this is a binary tree)
         System.out.println("Greater than K: " + countryList.higher("K"));

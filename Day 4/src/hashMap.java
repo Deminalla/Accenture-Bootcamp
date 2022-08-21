@@ -2,11 +2,12 @@ import java.util.*;
 
 /*HashMap Stores elements in form of key-value pair
 Each element has its corresponding key which is required for its retrieval during iteration
+Won't actually sort and make it random order, unless the keys are integers
  */
 
 public class hashMap {
     public static void main(String []args) {
-        HashMap<Integer,String> hash_map = new HashMap<Integer,String>();
+        HashMap<Integer,String> hash_map = new HashMap<>();
         hash_map.put(1, "Saturn");
         hash_map.put(2, "Mercury");
         hash_map.put(3, "Neptune");
@@ -43,8 +44,11 @@ public class hashMap {
         }
 
         // create set view for the map
+        System.out.println("Set values: " + hash_map); // {1=Saturn, 2=Mercury,......}
+        /*
         Set mapSet = hash_map.entrySet();
         System.out.println("Set values: " + mapSet); // [1=Saturn, 2=Mercury,......]
+         */
 
         // get keyset value and value from map
         Set keySet = hash_map.keySet();
