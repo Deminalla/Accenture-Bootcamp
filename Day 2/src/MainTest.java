@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,20 +15,20 @@ class MainTest {
         assertTrue(Main.compareBoolean(true, true));
     }
 
-    @Test
+    @ParameterizedTest // execute this test method multiple times with different parameters
     @DisplayName("Is the number even?")
-    void evenOrOdd1() {
-        int a = 15;
-        assertAll(()-> assertEquals(true, Main.evenOrOdd1(10)), // can shorten it to assertFalse and assertTrue
-                ()-> assertEquals(true, Main.evenOrOdd1(78)), // assertEquals is better for values instead of boolean
-                ()-> assertEquals(false, Main.evenOrOdd1(a)), // can also create and use variables in test method
-                ()-> assertEquals(false, Main.evenOrOdd1(13)));
+    @ValueSource(ints = {15, 3, 5, -3, 21}) // each time the test occurs it will pick a different value
+    void evenOrOdd1(int oddNR) { // oddNR is a parameter to access values in valuesource
+        assertAll(()-> assertEquals(true, Main.evenOrOdd1(10)),
+                ()-> assertEquals(true, Main.evenOrOdd1(78)),
+                ()-> assertEquals(false, Main.evenOrOdd1(oddNR)));
     }
 
     @Test
     @DisplayName("Is the number odd?")
     void evenOrOdd2() {
-        assertFalse(Main.evenOrOdd2(10));
+        int a = 10;
+        assertFalse(Main.evenOrOdd2(a)); // can also create and use variables in test method
         assertTrue(Main.evenOrOdd2(7));
     }
 
@@ -36,13 +39,12 @@ class MainTest {
         assertTrue(Main.booleanOpposite(false));
     }
 
-    @Test
+    @ParameterizedTest
+    @CsvSource(value = {"-1,-2, -2, 1", // this way we can use multiple parameters
+                        "99, 200, -1, -1"})
     @DisplayName("(a==b) || (a<0 && b>0) || (a>100 && b>100)")
-    void integerTrue() {
-        assertAll(()-> assertEquals(false, Main.integerTrue(-1, -2)),
-                ()-> assertEquals(true, Main.integerTrue(-2, 1)),
-                ()-> assertEquals(true, Main.integerTrue(-1, -1)),
-                ()-> assertEquals(true, Main.integerTrue(101, 102)),
-                ()-> assertEquals(false, Main.integerTrue(99, 200)));
+    void integerTrue(int number1, int number2, int number3, int number4) {
+        assertAll(()-> assertEquals(false, Main.integerTrue(number1, number2)), // can shorten it to assertFalse and assertTrue
+                ()-> assertEquals(true, Main.integerTrue(number3, number4)));  // assertEquals is better for values instead of boolean
     }
 }
