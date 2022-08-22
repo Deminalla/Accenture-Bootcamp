@@ -1,6 +1,7 @@
 package com.example.spring2;
 
 // shows error in command prompt with mvnw spring-boot:run
+// doesn't work because link is unavailable
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +41,7 @@ public class Spring2Application {
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
         return args -> {
             Quote quote = restTemplate.getForObject(
-                    "https://quoters.apps.pcfone.io/api/random", Quote.class);
+                    "https://quoters.apps.pcfone.io/api/random", Quote.class); // link is dead
             log.info(quote.toString());
         };
     }
