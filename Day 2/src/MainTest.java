@@ -15,9 +15,10 @@ class MainTest {
     @Test
     @DisplayName("Is the number even?")
     void evenOrOdd1() {
+        int a = 15;
         assertAll(()-> assertEquals(true, Main.evenOrOdd1(10)), // can shorten it to assertFalse and assertTrue
                 ()-> assertEquals(true, Main.evenOrOdd1(78)), // assertEquals is better for values instead of boolean
-                ()-> assertEquals(false, Main.evenOrOdd1(15)),
+                ()-> assertEquals(false, Main.evenOrOdd1(a)), // can also create and use variables in test method
                 ()-> assertEquals(false, Main.evenOrOdd1(13)));
     }
 
