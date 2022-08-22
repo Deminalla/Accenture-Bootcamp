@@ -14,10 +14,11 @@ public class SpringBasicApplication {
         SpringApplication.run(SpringBasicApplication.class, args);
     }
 
-    @GetMapping("/hello") // it will expect the path http://localhost:8080/hello?name=Den
+    @GetMapping("/hello") // this tells Spring to use our hello() method to answer requests that get sent to the http://localhost:8080/hello?name=Den.
     // only supports get type http and is shortcut for @RequestMapping(method = requestMethod.GET, path = "/hello")
     //because RequestMapping also allows cutomizing and bby default allows different http types like post, delete and so on
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) { // in case we don't input/gave the name it will be World
+    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+        // @RequestParam is telling Spring to expect a name value, but if it’s not there, it will use the word “World” by default
         return String.format("Hello %s!", name);
     }
 
