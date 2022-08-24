@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:\Users\deniz\Desktop\Accenture\OOP Syntax\Day 7\SQLite.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="5166"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainalbums"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="albums" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="84"/><column index="2" value="300"/><column index="3" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">SELECT * FROM albums /* select all */
+/*SELECT DISTINCT Title, ArtistId FROM albums /* will show only unique elements from selected columns*/
+
+WHERE AlbumId &gt; 25 AND  ArtistId &lt; 200 /* will only show row with Id &gt; 25 */
+/*WHERE AlbumId BETWEEN 25 AND 250  
+ WHERE AlbumId IN (51, 252, 73), basicaly = OR = OR =, the opposite is NOT IN 
+ WHERE Title LIKE '%on%' , this will find elements that contain on(Transmission, The Song..., ..... Illusion)
+ 's%' starts with s, '%er' ends with er 
+ WHERE Title LIKE 'h_nt', for example hunt, hint
+ WHERE Title GLOB 'Man*', starts with Man and is followed by some symbols, like Manmade
+ WHERE Title GLOB '?ell*', starts with some 1 symbol and continues with ere,, then followed by howerver many symbols, like cellphone
+ GLOB is similar to LIKE, but is case sensitive
+(*) matches any number of characters.
+(?) matches exactly one character
+WHERE name GLOB '*[^1-9]*', names that don't contain those numbers
+*/
+
+ORDER BY Title DESC /* will sort by descending according to Title column, ASC is default */
+/* can sort by multiple columns*/
+
+LIMIT 10 OFFSET 15; /* first 10 rows starting from the 15th row */
+/* LIMIT 10 /* will show the first 10 rows */
+
+ 
+/* the order in which you type the commands is important, will show errors otherwise */</sql><current_tab id="0"/></tab_sql></sqlb_project>
