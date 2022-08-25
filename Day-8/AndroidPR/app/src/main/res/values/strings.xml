@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidPR</string>
+    <string name="enterMessage">Enter a message</string>
+    <string name="pressButton">Send</string>
 </resources>
