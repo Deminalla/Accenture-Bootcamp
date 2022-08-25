@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextTextPersonName"
         android:layout_width="234dp"
         android:layout_height="70dp"
         android:layout_marginStart="18dp"
@@ -26,9 +26,10 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="18dp"
+        android:onClick="sendMessage"
         android:text="@string/pressButton"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
